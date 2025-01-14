@@ -19,6 +19,7 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:1.5.8")
     implementation("net.kyori:adventure-text-minimessage:4.17.0")
     implementation("org.mariadb.jdbc:mariadb-java-client:3.4.1")
+    implementation("dev.hollowcube:polar:1.12.1")
 }
 
 tasks.test {

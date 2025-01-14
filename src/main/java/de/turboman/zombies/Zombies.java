@@ -5,6 +5,7 @@ import de.turboman.zombies.handlers.DummyHandler;
 import de.turboman.zombies.handlers.SignHandler;
 import de.turboman.zombies.handlers.SkullHandler;
 import net.hollowcube.polar.PolarLoader;
+import net.mangolise.anticheat.MangoAC;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.coordinate.Pos;
 import net.minestom.server.entity.GameMode;
@@ -19,10 +20,13 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.List;
 
 public class Zombies {
 
     private static final Logger log = LoggerFactory.getLogger(Zombies.class);
+
+    public static MangoAC antiCheat;
 
     public static void main(String[] args) throws IOException {
         MinecraftServer minecraftServer = MinecraftServer.init();
@@ -62,6 +66,11 @@ public class Zombies {
 
             player.setGameMode(GameMode.ADVENTURE);
         });
+
+        MangoAC.Config config = new MangoAC.Config(false, List.of(), List.of(), List.of());
+        antiCheat = new MangoAC(config);
+
+        antiCheat.start();
 
         minecraftServer.start("0.0.0.0", 25565);
     }

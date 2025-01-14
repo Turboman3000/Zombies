@@ -8,6 +8,7 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    maven("https://maven.serble.net/snapshots/")
 }
 
 dependencies {
@@ -20,6 +21,7 @@ dependencies {
     implementation("net.kyori:adventure-text-minimessage:4.17.0")
     implementation("org.mariadb.jdbc:mariadb-java-client:3.4.1")
     implementation("dev.hollowcube:polar:1.12.1")
+    implementation("net.mangolise:mango-anti-cheat:latest")
 }
 
 tasks.test {

@@ -46,7 +46,7 @@ public class Zombies {
         InstanceManager instanceManager = MinecraftServer.getInstanceManager();
         InstanceContainer instanceContainer = instanceManager.createInstanceContainer();
 
-        instanceContainer.setChunkLoader(new PolarLoader(Path.of("worlds/world.polar").toAbsolutePath()));
+        instanceContainer.setChunkLoader(new PolarLoader(Path.of("worlds/ZombiesTest.polar").toAbsolutePath()));
 
         // Add an event callback to specify the spawning instance (and the spawn position)
         GlobalEventHandler globalEventHandler = MinecraftServer.getGlobalEventHandler();
